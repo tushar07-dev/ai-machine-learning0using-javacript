@@ -107,9 +107,10 @@ footer a:hover {
 
 .clientsList {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
   gap: 20px;
+  /* height:max-content; */
 }
 
 .client {
