@@ -1,43 +1,39 @@
-import React, { useState }  from "react";
-import {v4 as uuidv4} from 'uuid';
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { v4 as uuidV4 } from 'uuid';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const navigate = useNavigate();
-    const [roomId, setRoomId] = useState("");
-    const [username, setUsername] = useState("");
 
+    const [roomId, setRoomId] = useState('');
+    const [username, setUsername] = useState('');
     const createNewRoom = (e) => {
         e.preventDefault();
-        const id = uuidv4();
+        const id = uuidV4();
         setRoomId(id);
-        toast.success('Created new room')
-    }
+        toast.success('Created a new room');
+    };
 
     const joinRoom = () => {
-        if(!roomId || !username) {
-            toast.success('Room Id & Username is required');
+        if (!roomId || !username) {
+            toast.error('ROOM ID & username is required');
             return;
         }
-        // redirect
-        navigate(`/editor/${roomId}`,
-        // passing date from one ROute to another route using state object below
-        {
+
+        // Redirect
+        navigate(`/editor/${roomId}`, {
             state: {
                 username,
-            }
-        }
-    );
-    }
+            },
+        });
+    };
 
     const handleInputEnter = (e) => {
-        e.preventDefault();
-        if(e.code === 'Enter') {
+        if (e.code === 'Enter') {
             joinRoom();
         }
-    }
-
+    };
     return (
         <div className="homePageWrapper">
             <div className="formWrapper">
@@ -64,10 +60,7 @@ const Home = () => {
                         value={username}
                         onKeyUp={handleInputEnter}
                     />
-                    <button
-                        className="btn joinBtn"
-                        onClick={joinRoom}
-                    >
+                    <button className="btn joinBtn" onClick={joinRoom}>
                         Join
                     </button>
                     <span className="createInfo">
@@ -89,7 +82,7 @@ const Home = () => {
                 </h4>
             </footer>
         </div>
-    )
-}
+    );
+};
 
 export default Home;

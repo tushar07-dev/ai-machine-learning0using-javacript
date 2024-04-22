@@ -13,6 +13,7 @@ import {keymap} from "@codemirror/view";
 // import 'codemirror/addon/edit/closebrackets';
 
 const Editor = () => {
+
     const [value, setValue ] = useState('');
 
     useEffect(() => {
