@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { KeycloakProvider } from '@react-keycloak/web';
+// import { KeycloakProvider } from '@react-keycloak/web';
 import keycloak from './keycloak';
 import Login from '../components/Login';
 import Signup from '../components/Signup';
@@ -8,7 +8,7 @@ import Whiteboard from '../components/Whiteboard';
 
 const App: React.FC = () => {
   return (
-    <KeycloakProvider keycloak={keycloak}>
+    // <KeycloakProvider keycloak={keycloak}>
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Route path="/whiteboard" element={<Whiteboard />} />
         </Routes>
       </Router>
-    </KeycloakProvider>
+    // </KeycloakProvider>
   );
 };
 
