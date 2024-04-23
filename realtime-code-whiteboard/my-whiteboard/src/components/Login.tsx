@@ -12,7 +12,7 @@ const LoginPage: React.FC = () => {
   return (
     <div>
       <h2>Login</h2>
-      <Button onClick={handleLogin}>Login with Keycloak</Button>
+      <Button onClick={handleLogin}>Login  with Keycloak</Button>
     </div>
   );
 };

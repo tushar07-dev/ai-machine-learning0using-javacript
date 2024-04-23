@@ -9,7 +9,7 @@ import Whiteboard from '../src/components/Whiteboard';
 const App: React.FC = () => {
   return (
     // <KeycloakProvider keycloak={keycloak}>
-      <Router>
+      <Router >
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

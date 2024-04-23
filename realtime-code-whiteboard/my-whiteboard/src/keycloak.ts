@@ -6,7 +6,7 @@ const keycloak = new Keycloak({
   clientId: 'myclient',
 });
 
-export const useKeycloakAuth = () => {
+export const  useKeycloakAuth = () => {
   const login = () => keycloak.login();
   const logout = () => keycloak.logout();
   const isAuthenticated = () => keycloak.authenticated;
